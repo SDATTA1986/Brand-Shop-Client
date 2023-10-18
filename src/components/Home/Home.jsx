@@ -4,6 +4,7 @@ import Navbar from "../Shared/Navbar";
 import Brand from "../Brand/Brand";
 import Services from "../Services/Services";
 import Footer from "../Footer/Footer";
+import ContactUs from "../Contact/ContactUs";
 
 
 const Home = () => {
@@ -28,6 +29,12 @@ const Home = () => {
 
             </div>
             <Services></Services>
+            <div>
+                <h2 className="text-5xl text-center mx-auto font-bold  py-4 mt-40 w-[600px] ">CONTACT US</h2>
+                <hr className="border border-solid border-black w-[100px] mx-auto"/>
+
+            </div>
+            <ContactUs></ContactUs>
             <Footer></Footer>
             
         </div>
