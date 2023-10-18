@@ -38,12 +38,12 @@ const Navbar = () => {
                     </div>
                     <img className='max-w-[150px] max-h-[150px]' src={logo} alt="" />
                 </div>
-                <div className="  hidden lg:flex">
+                <div className="navbar-center  hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-xl ">
                         {navLinks}
                     </ul>
                 </div>
-                <div >
+                <div className="navbar-end">
                     {
 
                         user ?

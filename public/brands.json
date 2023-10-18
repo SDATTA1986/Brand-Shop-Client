@@ -1,0 +1,35 @@
+
+     [
+      {
+        "id": 1,
+        "name": "Sony",
+        "image": "https://i.ibb.co/fCLkZbn/Sony.png"
+      },
+      {
+        "id": 2,
+        "name": "Samsung",
+        "image": "https://i.ibb.co/Vqt4WcT/samsung.png"
+      },
+      {
+        "id": 3,
+        "name": "LG",
+        "image": "https://i.ibb.co/kQg1TXH/LG.png"
+      },
+      {
+        "id": 4,
+        "name": "Apple",
+        "image": "https://i.ibb.co/4T2PkyS/apple.png"
+      },
+      {
+        "id": 5,
+        "name": "Dell",
+        "image": "https://i.ibb.co/rMb4q4s/Dell.png"
+      },
+      {
+        "id": 6,
+        "name": "HP",
+        "image": "https://i.ibb.co/MRqCxKm/hp.jpg"
+      }
+    ]
+  
+  
