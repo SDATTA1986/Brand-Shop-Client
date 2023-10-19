@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 import StarRatings from 'react-star-ratings';
 import Navbar from "../Shared/Navbar";
+import swal from "sweetalert";
 
 const ProductDetails = () => {
 
@@ -18,6 +19,27 @@ console.log(products)
     const { image, name, state, type, price, rating, description } = singleProduct || {};
 
     const rating2=parseInt(rating);
+
+    const handleCart=()=>{
+        const myData={
+            image,name,state,type,price,description,rating,_id
+        };
+        
+        fetch("http://localhost:5000/cart", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(myData),
+          })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.acknowledged){
+                swal("Congratulations!", "You have successfully Added to Cart!", "success");
+            }
+        })
+    }
 
     return (
         <div>
@@ -47,7 +69,7 @@ console.log(products)
                         />
 
                         <div>
-                            <button className="btn bg-green-600 hover:bg-green-700 mt-2">Add to Cart</button>
+                            <button onClick={handleCart} className="btn bg-green-600 hover:bg-green-700 mt-2">Add to Cart</button>
                         </div>
                     </div>
 
