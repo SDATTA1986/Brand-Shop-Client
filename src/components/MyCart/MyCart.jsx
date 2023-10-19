@@ -1,20 +1,59 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
-import CartProduct from "../CartProduct/CartProduct";
+
+import { useState } from "react";
+import swal from "sweetalert";
 
 
 const MyCart = () => {
     const items = useLoaderData();
-    console.log(items, items.length)
+    const [cartItem, setCartItem] = useState(items);
+    const handleDelete=(_id)=>{
+        console.log(_id);
+        fetch(`http://localhost:5000/cart/${_id}`,{
+            method:"DELETE",
+        })
+        .then(res=>res.json())
+        .then(data=>{console.log(data);
+            const remaining=cartItem.filter(singleItem=>singleItem._id!==_id);
+            setCartItem(remaining);
+            if(data.acknowledged){
+                swal("Congratulations!", "You have successfully Deleted This Product!", "success");
+            }
+        })
+    }
+    
+    
+
+    
     return (
         <div>
             <Navbar></Navbar>
-            {items.length > 0 ?
+            {cartItem?.length > 0 ?
                 <div className="mt-[70px] grid grid-cols-2 gap-20 mb-[20px]">
-                {
-                    items.map(item => <CartProduct key={item._id} item={item} ></CartProduct>)
-                }            
                    
+
+                    {cartItem?.map(item => (
+                        <div key={item._id}>
+                            <div className="hero  bg-base-200">
+                                <div className="hero-content flex-col lg:flex-row">
+                                    <img src={item.image} className=" rounded-lg shadow-2xl" />
+                                    <div>
+                                        <h1 className="text-2xl font-bold">{item.name}</h1>
+                                        <p className="py-2  text-green-700 text-5xl font-bold">{item.state}</p>
+                                        <p className="py-2">Type: {item.type}</p>
+
+
+                                        <button onClick={() => handleDelete(item._id)} className="btn bg-green-600 hover:bg-green-700">Delete Item</button>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                    )}
+
                 </div>
                 :
                 <div className="mt-[70px] text-center text-5xl mb-[20px]">
