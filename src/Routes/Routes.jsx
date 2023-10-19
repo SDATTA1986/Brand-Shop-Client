@@ -9,6 +9,7 @@ import Home from "../components/Home/Home";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import BrandDetails from "../components/BrandDetails/BrandDetails";
+import DisplayProduct from "../components/DisplayProduct/DisplayProduct";
 
 const router = createBrowserRouter([
     {
@@ -22,9 +23,11 @@ const router = createBrowserRouter([
                 loader: ()=>fetch('/brands.json'),
 
             },
+            
             {
             path:'/brand/:name',
-            element:<PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>
+            element:<BrandDetails></BrandDetails>,
+            loader: ()=>fetch('http://localhost:5000/users')
             },
             {
                 path: '/addProduct',

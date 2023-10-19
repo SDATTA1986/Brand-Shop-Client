@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "../Shared/Navbar";
-
+import swal from "sweetalert";
 
 const AddProduct = () => {
     const [state,setState]=useState("Sony");
@@ -20,7 +20,24 @@ const AddProduct = () => {
         const rating=form.rating.value;
         
         console.log(image,name,state,type,price,description,rating);
+        const myData={
+            image,name,state,type,price,description,rating
+        };
         form.reset();
+        fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(myData),
+          })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+            if(data.acknowledged){
+                swal("Congratulations!", "You have successfully Added This Product!", "success");
+            }
+        })
     }
 
     return (
@@ -64,7 +81,7 @@ const AddProduct = () => {
 
                     </div>
                     <div className="relative z-0 w-full mb-6 group">
-                        <input type="text" name="rating" id="rating" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Rating" required />
+                        <input type="text" name="rating" id="rating" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="Rating(out of 10)" required />
 
                     </div>
                     
