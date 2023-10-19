@@ -30,13 +30,13 @@ const BrandDetails = () => {
                     <div data-src={logo3} />
                  
                 </AutoplaySlider>
-                {singleBrand.length>0? <div className="mt-[70px] grid grid-cols-2 gap-20">
+                {singleBrand.length>0? <div className="mt-[70px] grid grid-cols-2 gap-20 mb-[20px]">
                 {
                     singleBrand.map(user => <DisplayProduct key={user._id} user={user} ></DisplayProduct>)
                 }
                 </div>: 
-                <div className="mt-[70px]">
-                    No Data to Display
+                <div className="mt-[70px] text-center text-5xl mb-[20px]">
+                    No Product Available
                 </div>
                 }
                 

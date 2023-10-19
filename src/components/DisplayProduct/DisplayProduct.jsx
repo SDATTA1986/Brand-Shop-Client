@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const DisplayProduct = ({ user }) => {
-    const { image, name, state, type,price,rating } = user || {};
+    const { image, name, state, type,price,rating,_id } = user || {};
     return (
         <div>
             <div className="hero  bg-base-200">
@@ -14,7 +15,7 @@ const DisplayProduct = ({ user }) => {
                         <p className="py-2">Price: {price}</p>
                         <p className="py-2">Rating: <span className="text-2xl font-bold">{rating}</span>/10</p>
                         <div className="flex gap-2">
-                        <button className="btn bg-green-600 hover:bg-green-700">View Details</button>
+                        <Link to={`/product/${_id}`}><button className="btn bg-green-600 hover:bg-green-700">View Details</button></Link>
                         <button className="btn  bg-green-600 hover:bg-green-700">Update Product</button>
                         </div>
                         
