@@ -58,7 +58,7 @@ const Navbar = () => {
                                 </label>
                                 <div className='flex justify-center items-center'>
                                     <h3 className='text-xl '>{user?.displayName}</h3>
-                                    <button onClick={handleLogOut} className="btn bg-yellow-400 hover:bg-sky-400 text-xl">Log Out</button>
+                                    <button onClick={handleLogOut} className="btn bg-green-600 hover:bg-green-700 text-xl">Log Out</button>
                                 </div>
                             </div>
 
