@@ -12,10 +12,10 @@ const ContactUs = () => {
                             <FaMobileAlt className="text-3xl mb-3 text-green-700 "></FaMobileAlt>
                         </div>
                         <a href="#">
-                            <h5 className="mb-3 text-xl font-light tracking-tight text-gray-900 dark:text-white  mx-auto text-center ">Call:+1 5589 55488 55</h5>
+                            <h5 className="mb-3 text-xl font-light tracking-tight   mx-auto text-center ">Call:+1 5589 55488 55</h5>
                         </a>
                         <a href="#">
-                            <h5 className="mb-3 text-xl font-light tracking-tight text-gray-900 dark:text-white  mx-auto text-center ">Monday-Friday (9am-5pm)</h5>
+                            <h5 className="mb-3 text-xl font-light tracking-tight  mx-auto text-center ">Monday-Friday (9am-5pm)</h5>
                         </a>
                     </div>
                 </div>
@@ -25,10 +25,10 @@ const ContactUs = () => {
                             <AiOutlineMail className="text-3xl mb-3 text-green-700 "></AiOutlineMail>
                         </div>
                         <a href="#">
-                            <h5 className="mb-3 text-xl font-light tracking-tight text-gray-900 dark:text-white  mx-auto text-center ">Email: info@gmail.com</h5>
+                            <h5 className="mb-3 text-xl font-light tracking-tight  mx-auto text-center ">Email: info@gmail.com</h5>
                         </a>
                         <a href="#">
-                            <h5 className="mb-3 text-xl font-light tracking-tight text-gray-900 dark:text-white  mx-auto text-center ">Web: www.eBusiness.com</h5>
+                            <h5 className="mb-3 text-xl font-light tracking-tight  mx-auto text-center ">Web: www.eBusiness.com</h5>
                         </a>
                     </div>
                 </div>
@@ -38,10 +38,10 @@ const ContactUs = () => {
                             <HiOutlineLocationMarker className="text-3xl mb-3 text-green-700 "></HiOutlineLocationMarker>
                         </div>
                         <a href="#">
-                            <h5 className="mb-3 text-xl font-light tracking-tight text-gray-900 dark:text-white  mx-auto text-center ">Location: A108 Adam Street </h5>
+                            <h5 className="mb-3 text-xl font-light tracking-tight   mx-auto text-center ">Location: A108 Adam Street </h5>
                         </a>
                         <a href="#">
-                            <h5 className="mb-3 text-xl font-light tracking-tight text-gray-900 dark:text-white  mx-auto text-center ">California 535022, USA</h5>
+                            <h5 className="mb-3 text-xl font-light tracking-tight   mx-auto text-center ">California 535022, USA</h5>
                         </a>
                     </div>
                 </div>
