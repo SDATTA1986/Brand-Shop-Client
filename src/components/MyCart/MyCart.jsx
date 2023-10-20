@@ -3,6 +3,7 @@ import Navbar from "../Shared/Navbar";
 
 import { useState } from "react";
 import swal from "sweetalert";
+import Swal from "sweetalert2";
 
 
 const MyCart = () => {
@@ -10,21 +11,31 @@ const MyCart = () => {
     const [cartItem, setCartItem] = useState(items);
     const handleDelete=(_id)=>{
         console.log(_id);
-        fetch(`http://localhost:5000/cart/${_id}`,{
-            method:"DELETE",
-        })
-        .then(res=>res.json())
-        .then(data=>{console.log(data);
-            const remaining=cartItem.filter(singleItem=>singleItem._id!==_id);
-            setCartItem(remaining);
-            if(data.acknowledged){
-                swal("Congratulations!", "You have successfully Deleted This Product!", "success");
-            }
-        })
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/cart/${_id}`,{
+                    method:"DELETE",
+                })
+                .then(res=>res.json())
+                .then(data=>{console.log(data);
+                    const remaining=cartItem.filter(singleItem=>singleItem._id!==_id);
+                    setCartItem(remaining);
+                    if(data.deletedCount>0){
+                        Swal.fire("Deleted !", "You have successfully Deleted This Product!", "success");
+                    }
+            })
+          }})
+        
+        
     }
-    
-    
-
     
     return (
         <div>

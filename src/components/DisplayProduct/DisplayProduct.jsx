@@ -16,7 +16,7 @@ const DisplayProduct = ({ user }) => {
                         <p className="py-2">Rating: <span className="text-2xl font-bold">{rating}</span>/10</p>
                         <div className="flex gap-2">
                         <Link to={`/product/${_id}`}><button className="btn bg-green-600 hover:bg-green-700">View Details</button></Link>
-                        <button className="btn  bg-green-600 hover:bg-green-700">Update Product</button>
+                        <Link to={`/updateProduct/${_id}`}><button className="btn  bg-green-600 hover:bg-green-700">Update Product</button></Link>
                         </div>
                         
                     </div>
