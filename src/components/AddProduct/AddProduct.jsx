@@ -24,7 +24,7 @@ const AddProduct = () => {
             image,name,state,type,price,description,rating
         };
         form.reset();
-        fetch("http://localhost:5000/users", {
+        fetch("https://brand-shop-server-side-q0n7ehyj9-sourav-dattas-projects.vercel.app/users", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

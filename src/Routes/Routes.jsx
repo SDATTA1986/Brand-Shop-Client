@@ -29,12 +29,12 @@ const router = createBrowserRouter([
             {
             path:'/brand/:name',
             element:<BrandDetails></BrandDetails>,
-            loader: ()=>fetch('http://localhost:5000/users')
+            loader: ()=>fetch('https://brand-shop-server-side-q0n7ehyj9-sourav-dattas-projects.vercel.app/users')
             },
             {
             path:'/product/:_id',
             element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-            loader: ()=>fetch('http://localhost:5000/users')
+            loader: ()=>fetch('https://brand-shop-server-side-q0n7ehyj9-sourav-dattas-projects.vercel.app/users')
             },
             {
                 path: '/addProduct',
@@ -44,14 +44,14 @@ const router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/users/${params.id}`)
+                loader:({params})=>fetch(`https://brand-shop-server-side-q0n7ehyj9-sourav-dattas-projects.vercel.app/users/${params.id}`)
                 
             },
             
             {
                 path: '/myCart',
                 element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
-                loader: ()=>fetch('http://localhost:5000/cart')
+                loader: ()=>fetch('https://brand-shop-server-side-q0n7ehyj9-sourav-dattas-projects.vercel.app/cart')
             },
            
             {

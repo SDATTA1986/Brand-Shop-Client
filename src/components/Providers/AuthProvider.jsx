@@ -1,6 +1,7 @@
-import { createContext,  useEffect, useState } from "react";
+import { createContext,  useEffect } from "react";
 import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile,GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import app from "../../firebase.config";
+import { useState } from "react";
 
 
 export const AuthContext=createContext(null);
@@ -34,6 +35,13 @@ const AuthProvider = ({children}) => {
     const upProfile=(Name,Photo)=>{
         setLoading(true);
         return updateProfile(auth.currentUser,{displayName:`${Name}`,photoURL:`${Photo}`})
+        .then(() => {
+            setLoading(false); 
+        })
+        .catch(() => {
+            setLoading(false); 
+            
+        });
     }
     
 

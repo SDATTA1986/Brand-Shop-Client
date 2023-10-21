@@ -4,7 +4,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 import swal from "sweetalert";
 import logo from '../../assets/logo.png'
 import MyCart from './../MyCart/MyCart';
-
+import userDefaultPic from '../../assets/user.png'
 
 const Navbar = () => {
     const { user, logOut, loading } = useContext(AuthContext);

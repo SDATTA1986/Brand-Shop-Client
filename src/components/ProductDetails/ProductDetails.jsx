@@ -25,7 +25,7 @@ console.log(products)
             image,name,state,type,price,description,rating,_id
         };
         
-        fetch("http://localhost:5000/cart", {
+        fetch("https://brand-shop-server-side-q0n7ehyj9-sourav-dattas-projects.vercel.app/cart", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

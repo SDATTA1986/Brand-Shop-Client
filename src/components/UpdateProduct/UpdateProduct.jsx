@@ -29,7 +29,7 @@ const UpdateProduct = () => {
             image,name,state,type,price,description,rating
         };
         form.reset();
-        fetch(`http://localhost:5000/users/${_id}`, {
+        fetch(`https://brand-shop-server-side-q0n7ehyj9-sourav-dattas-projects.vercel.app/users/${_id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

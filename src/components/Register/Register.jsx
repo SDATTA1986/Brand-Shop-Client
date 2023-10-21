@@ -2,16 +2,16 @@
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar";
-import { useContext} from "react";
+import { useContext } from "react";
 
 import swal from "sweetalert";
-import {FaGoogle} from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from "../Providers/AuthProvider";
 
 
 const Register = () => {
-    const location=useLocation();
-    const navigate=useNavigate();
+    const location = useLocation();
+    const navigate = useNavigate();
     const { createUser, upProfile } = useContext(AuthContext);
     const regex1 = /^[^A-Z]*$/;
     const regex2 = /^[^\W_]*$/;
@@ -46,18 +46,16 @@ const Register = () => {
 
         createUser(email, password)
             .then(() => {
+
                 upProfile(Name, Photo)
-                    .then()
+                    .then(() => {
+                        navigate(location?.state ? location.state : '/');
+                        e.target.reset();
+                        swal("Thank you!", "You have successfully registered!", "success");
+                    })
                     .catch()
-                e.target.email.value = '';
-                e.target.password.value = '';
-                e.target.name.value = '';
-                e.target.photoURL.value = '';
-                swal("Thank you!", "You have successfully registered!", "success");
-                navigate(location?.state?location.state:'/');
             })
             .catch(error => {
-
                 swal("Sorry!", `${error.message}`, "error");
             }
             )
